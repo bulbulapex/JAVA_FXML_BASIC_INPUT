@@ -1,0 +1,2 @@
+Student{name='Bulbul', department='Computer', gender='Male'}
+Student{name='Abbas', department='Business', gender='Male'}

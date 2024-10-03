@@ -60,6 +60,8 @@ public class HelloController {
 
 
         System.out.println(student);
+        student.fWriteFile();
+        //System.out.println(student.getDetails());
         studentList.add(student);
     }
 
