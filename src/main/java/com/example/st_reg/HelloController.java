@@ -11,8 +11,11 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TextArea;
 
 public class HelloController {
+    @FXML
+    public TextArea textAreaDetails;
     @FXML
     private TextField nameField;
     @FXML
@@ -40,6 +43,8 @@ public class HelloController {
         studentList = FXCollections.observableArrayList();
         studentListView.setItems(studentList);
 
+        Student student = new Student();
+        textAreaDetails.setText(student.getDetails());
     }
 
     public void submitAction(ActionEvent event) {
@@ -63,6 +68,7 @@ public class HelloController {
         student.fWriteFile();
         //System.out.println(student.getDetails());
         studentList.add(student);
+        textAreaDetails.setText(student.getDetails());
     }
 
     public void handleResetAction(ActionEvent actionEvent) {
