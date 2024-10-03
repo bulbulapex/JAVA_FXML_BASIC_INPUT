@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" prefHeight="500.0" prefWidth="300.0" spacing="20.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.st_reg.HelloController">
+  <padding>
+    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+  </padding>
+   <children>
+      <GridPane prefHeight="324.0" prefWidth="239.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="89.20001220703125" minWidth="10.0" prefWidth="74.19998779296876" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="123.1999755859375" minWidth="6.2000488281249915" prefWidth="15.200024414062497" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="203.199951171875" minWidth="10.0" prefWidth="171.19997558593752" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="105.59998779296875" minHeight="5.6000049591064425" prefHeight="40.79997406005859" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="196.79999504089352" minHeight="0.0" prefHeight="43.600006103515625" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="269.20000000000005" minHeight="10.0" prefHeight="34.20001220703125" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="328.7999954223633" minHeight="3.600006103515625" prefHeight="28.99998779296874" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="307.1999938964844" minHeight="10.0" prefHeight="38.00001220703123" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="307.1999938964844" minHeight="10.0" prefHeight="43.600012207031284" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="307.1999938964844" minHeight="10.0" prefHeight="105.99998779296874" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Name" />
+            <Label text=":" GridPane.columnIndex="1" />
+            <TextField fx:id="nameField" GridPane.columnIndex="2" />
+            <Label text="Department" GridPane.rowIndex="1" />
+            <Label text=":" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="Gender" GridPane.rowIndex="2" />
+            <Label text=":" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <CheckBox fx:id="genderMaleCheckBox" mnemonicParsing="false" prefHeight="18.0" prefWidth="69.0" text="Male" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <CheckBox fx:id="genderFemaleCheckBox" mnemonicParsing="false" prefHeight="18.0" prefWidth="74.0" text="Female" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Button mnemonicParsing="false" onAction="#handleResetAction" text="Reset" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <Button mnemonicParsing="false" onAction="#submitAction" text="Submit" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+            <ComboBox fx:id="departmentDropdown" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <ListView fx:id="studentListView" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+         </children>
+      </GridPane>
+   </children>
+</VBox>
