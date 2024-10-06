@@ -7,11 +7,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
 
 public class HelloController {
     @FXML
@@ -27,6 +23,8 @@ public class HelloController {
     CheckBox genderMaleCheckBox;
     @FXML
     CheckBox genderFemaleCheckBox;
+    @FXML
+    private RadioButton genderMale, genderFemale;
 
     public void initialize() {
         System.out.println("Inititalizing Hello Controller");
@@ -50,18 +48,23 @@ public class HelloController {
     public void submitAction(ActionEvent event) {
         String name = nameField.getText();
         String department = departmentDropdown.getSelectionModel().getSelectedItem();
-        boolean isMale = genderMaleCheckBox.isSelected();
-        boolean isFemale = genderFemaleCheckBox.isSelected();
+        /*boolean isMale = genderMaleCheckBox.isSelected();
+        boolean isFemale = genderFemaleCheckBox.isSelected();*/
         Student student = new Student();
         student.setName(name);
         student.setDepartment(department);
-        if(isMale){
+        /*if(isMale){
             student.setGender("Male");
         }
         else if(isFemale){
             student.setGender("Female");
-        }
+        }*/
 
+        if(genderMale.isSelected()){
+            student.setGender("Male");
+        }else if(genderFemale.isSelected()){
+            student.setGender("Female");
+        }
 
 
         System.out.println(student);
@@ -69,6 +72,7 @@ public class HelloController {
         //System.out.println(student.getDetails());
         studentList.add(student);
         textAreaDetails.setText(student.getDetails());
+
     }
 
     public void handleResetAction(ActionEvent actionEvent) {
